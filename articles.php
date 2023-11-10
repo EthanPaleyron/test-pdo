@@ -44,7 +44,7 @@
                     <img src='files/" . $e["File"] . "' alt='" . $e["File"] . "'>
                     <p>" . $e["Comment"] . "</p>
                     <ul>");
-                if ($_SESSION["id"] === $e["user_id"]) {
+                if (isset($_SESSION["id"]) === isset($e["user_id"])) {
                     echo "<li><a href='change.php?id=" . $e["Id"] . "'>Change</a></li>";
                     echo "<li><a href='delete.php?id=" . $e["Id"] . "'>Delete</a></li>";
                 }
