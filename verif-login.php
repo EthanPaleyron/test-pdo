@@ -13,6 +13,7 @@ try {
         header("Location: http://localhost/test-pdo/articles.php");
     } else {
         echo ("login incorect!");
+        echo ('<a href="login.php">Try again</a>');
     }
     $resultat->closeCursor();
 } catch (Exception $e) {

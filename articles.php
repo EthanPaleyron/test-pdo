@@ -20,7 +20,7 @@
                 echo "<li><a href='logout.php'>Logout</a></li>";
             }
             ?>
-            <li><a href="create-article.php">retour à la page d'insertion</a></li>
+            <li><a href="create-article.php">Create new post</a></li>
         </ul>
         <?php
         if (isset($_SESSION["login"]) && isset($_SESSION["password"])) {
@@ -38,10 +38,10 @@
             $resultat = $base->query($sql);
             while ($e = $resultat->fetch()) {
                 echo ("<article>
+                    <img src='files/" . $e["File"] . "' alt='" . $e["File"] . "'>
                     <p>By " . $e["user_id"] . "</p>
                     <h2>" . $e["Title"] . "</h2>
                     <p>Crée le <time datatime='" . $e["Date"] . "'>" . $e["Date"] . "</time></p>
-                    <img src='files/" . $e["File"] . "' alt='" . $e["File"] . "'>
                     <p>" . $e["Comment"] . "</p>
                     <ul>");
                 if (isset($_SESSION["id"]) === isset($e["user_id"])) {
