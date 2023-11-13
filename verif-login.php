@@ -10,7 +10,7 @@ try {
         $_SESSION["id"] = $donnees["Id"];
         $_SESSION["login"] = $_POST["login"];
         $_SESSION["password"] = $_POST["password"];
-        header("Location: http://localhost/test-pdo/articles.php");
+        header("Location: http://localhost/test-pdo/index.php");
     } else {
         echo ("login incorect!");
         echo ('<a href="login.php">Try again</a>');

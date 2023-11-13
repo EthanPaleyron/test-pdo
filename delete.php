@@ -7,7 +7,7 @@ try {
     $resultat = $base->prepare($sql);
     $resultat->execute(array('id' => $_GET["id"]));
     $resultat->closeCursor();
-    header("Location: http://localhost/test-pdo/articles.php");
+    header("Location: http://localhost/test-pdo/index.php");
 } catch (Exception $e) {
     throw new InvalidArgumentException($e->getMessage());
 }

@@ -9,7 +9,7 @@ try {
     move_uploaded_file($_FILES['file']['tmp_name'], "files/" . $image);
     $statement->execute(array("title" => htmlspecialchars($_POST["title"]), "date" => date('d.m.y'), "file" => $image, "comment" => htmlspecialchars($_POST["comment"]), "user_id" => $_SESSION["id"]));
     $statement->closeCursor();
-    header("Location: http://localhost/test-pdo/articles.php");
+    header("Location: http://localhost/test-pdo/index.php");
 } catch (Exception $e) {
     throw new InvalidArgumentException($e->getMessage());
 }
